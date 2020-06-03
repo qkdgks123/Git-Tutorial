@@ -1,0 +1,332 @@
+@charset
+"UTF-8"
+@import
+	url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap')
+	;
+/* Google Web Font */
+@import
+	url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+@import
+	url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+	;
+
+body {
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Trigger Button */
+input[id=trigger] {
+	display: none;
+}
+
+label[for=trigger] {
+	z-index: 1;
+	/*border: 1px solid red;*/
+	width: 30px;
+	height: 20px;
+	display: blue;
+	position: absolute;
+	cursor: pointer;
+	right: 50%;
+	top: 10px;
+	transform: translateY(-50%);
+	transition: 0.3s;
+}
+
+label[for=trigger] span {
+	position: absolute;
+	height: 2px;
+	background-color: #000;
+	width: 100%;
+	left: 0;
+	transition: 0.3s;
+}
+
+label[for=trigger] span:nth-child(1) {
+	top: 0;
+}
+
+label[for=trigger] span:nth-child(2) {
+	top: 50%;
+}
+
+label[for=trigger] span:nth-child(3) {
+	top: 100%;
+}
+
+/* 사이드바 */
+.sidebar {
+	z-index: 1;
+	background-color: black;
+	height: 500px;
+	width: 220vh;
+	position: fixed;
+	top: -510px;
+	transition: 0.3s;
+}
+/*햄버거바*/
+input[id=trigger]:checked+label[for=trigger] span:nth-child(1) {
+	top: 50%;
+	transform: rotate(45deg);
+	z-index: 1;
+}
+
+input[id=trigger]:checked+label[for=trigger] span:nth-child(2) {
+	opacity: 0;
+	z-index: 1;
+}
+
+input[id=trigger]:checked+label[for=trigger] span:nth-child(3) {
+	top: 50%;
+	transform: rotate(-45deg);
+	z-index: 1;
+}
+
+input[id=trigger]:checked ~ .sidebar {
+	top: 0;
+}
+
+input[id=trigger]:checked+label[for=trigger] {
+	top: 520px;
+}
+
+#ui_next {
+	left: 700px;
+}
+
+#ui_nextway {
+	left: 1100px;
+}
+
+#ui {
+	left: 200px;
+}
+
+.gnb {
+	position: absolute;
+	top: 250px;
+	transform: translateY(-50%);
+	display: inline;
+}
+
+.gnb a {
+	display: block;
+	font-size: 40px;
+	margin: 30px 0;
+	color: #fff;
+	transition: 0.5s;
+	text-decoration: none;
+}
+
+.gnb:hover a {
+	opacity: 0.3;
+}
+
+.gnb a:hover {
+	opacity: 1;
+}
+
+.gnb a:before {
+	content: '\f105';
+	font-family: fontawesome;
+	margin-right: 10px;
+	opacity: 0;
+}
+
+.gnb a:hover:before {
+	opacity: 1;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	line-height: 1.5em;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.gallery {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	height: 100vh;
+	z-index: -1;
+}
+
+.gallery li {
+	border-right: 5px solid #000;
+	flex: 1;
+	transition: 0.5s;
+	position: relative;
+	overflow: hidden;
+}
+
+.gallery li:last-child {
+	border-right: none;
+}
+
+.gallery li:nth-child(1) {
+	background: url(images/artistic-image-01.jpg) no-repeat center center;
+}
+
+.gallery li:nth-child(2) {
+	background: url(images/artistic-image-02.jpg) no-repeat center center;
+}
+
+.gallery li:nth-child(3) {
+	background: url(images/artistic-image-03.jpg) no-repeat center center;
+}
+
+.gallery li:nth-child(4) {
+	background: url(images/artistic-image-04.jpg) no-repeat center center;
+}
+
+.gallery li:nth-child(5) {
+	background: url(images/artistic-image-05.jpg) no-repeat center center;
+}
+
+.gallery:hover li {
+	flex: 1;
+}
+
+.gallery li:hover {
+	flex: 3;
+	filter: grayscale(1)
+}
+
+.content {
+	position: absolute;
+	background-color: #000;
+	color: white;
+	text-align: center;
+	height: 250px;
+	bottom: -320px;
+	transition: 0.5s;
+	padding: 20px;
+	box-sizing: border-box;
+	padding-top: 50px;
+	width: 100%;
+}
+
+.sns a {
+	color: #333;
+}
+
+.gallery li:hover .content {
+	bottom: 0;
+	transition-delay: 0.5s;
+}
+
+.content:before {
+	content: '';
+	position: absolute;
+	background-color: #000;
+	width: 100%;
+	height: 80px;
+	left: 0;
+	top: -10px;
+	transform-origin: left bottom;
+	transform: rotate(-3deg) scale(1.3)
+}
+
+.items {
+	text-align: center;
+}
+
+.item {
+	display: inline-block;
+	width: 300px;
+	height: 300px;
+	border: 1px solid #ddd;
+	position: relative;
+	margin: 10px;
+}
+
+.caption {
+	width: 300px;
+	height: 300px;
+	background-color: rgba(0, 0, 0, 0.7);
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #fff;
+	padding: 20px;
+	box-sizing: border-box;
+	padding-top: 40px;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.caption a {
+	color: #fff;
+	background-color: teal;
+	padding: 7px;
+	border-radius: 3px;
+}
+
+.caption a:hover {
+	background-color: #fff;
+	color: #000;
+}
+
+.item:hover .caption {
+	opacity: 1;
+}
+
+.inner {
+	border: 1px solid red;
+	width: 200px;
+	height: 250px;
+	position: relative;
+}
+
+.input[name=tebmenu] {
+	display: none;
+}
+
+.const {
+	display: none;
+}
+
+.botton {
+	border: 1px solid blue;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	
+}
+
+.botton label {
+	background-color: white;
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+input[id=table1]:checked ~ .slide1{
+display: block;
+}
+input[id=table2]:checked ~ .slide2{
+display: block;
+}
+input[id=table3]:checked ~ .slide3{
+display: block;
+}
+
+input[id=table1]:checked ~.botton label[for=table1]{
+	background-color: crimson;
+}
+
+input[id=table1]:checked ~.botton label[for=table2]{
+	background-color: crimson;
+}
+input[id=table1]:checked ~.botton label[for=table3]{
+	background-color: crimson;
+}
